@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "hub",
+      "runtimeExecutable": "uv",
+      "runtimeArgs": ["run", "hub/server.py", "--port", "8787"],
+      "port": 8787
+    }
+  ]
+}

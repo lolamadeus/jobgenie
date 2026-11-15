@@ -1,0 +1,33 @@
+# Portfolio library settings. You don't edit this by hand: ask Claude to "set up my portfolio library"
+# and it fills this in with you. See library/README.md.
+#
+# Leave `enabled: false` if your work isn't files on a drive (most non-creative roles). The Hub
+# hides the library until it's switched on.
+
+enabled: false
+title: Portfolio library
+
+# Folders to scan. kind: projects = each top-level subfolder is one project (e.g. one folder per
+# client or game); flat = the whole folder is one collection.
+roots: []
+#  - {path: "D:/Work/Finished", kind: projects, label: Finished work}
+#  - {path: "C:/Users/me/Videos/Reels", kind: flat, label: Old reels}
+
+# Which kinds of file to catalogue. Built in: image, video, audio, document, model (3D).
+# Add your own kind with `extensions` below (e.g. code, design files, game builds).
+kinds: [image, video, audio, document, model]
+
+# Extra file extensions, per kind. A kind that isn't built in is created automatically.
+extensions: {}
+#  model: [".spp", ".sbsar"]
+#  design: [".fig", ".sketch", ".xd"]
+
+# Labels you can tick on any item: what it's good for. Pick words that fit how you'll use the work,
+# e.g. [portfolio, cv, reel], [site, case-study, interview], [book, showreel, socials]. Up to 6.
+uses: [portfolio, cv]
+
+# Filters that keep the noise out of a big drive.
+min_audio_seconds: 0      # skip audio shorter than this (e.g. 20 to skip short sound effects)
+min_video_seconds: 0      # skip very short clips
+min_image_px: 0           # skip images whose longest edge is smaller (e.g. 400 skips icons and thumbnails)
+skip_dirs: []             # extra folder names to skip anywhere (cache, temp and build folders are skipped already)

@@ -1,0 +1,15 @@
+# Per-item corrections on top of the scan. Claude edits this, then rebuilds. Keys are the 12-character
+# ids from library.json (stable across rescans because they come from the file path).
+
+items: {}
+#  0123456789ab: {title: "Final poster", project: acme-rebrand, tags: [print, typography], desc: "", kind: image, hide: false}
+
+folders: {}
+#  "D:/Work|Old stuff": {project: acme-rebrand, note: "", ignore: true}
+
+# Rules apply to every item that has no entry under `items`. The first match wins.
+# `match` is a regex on the file name, `path` a regex on the path inside its root.
+rules: []
+#  - {match: "(wip|draft|test)", hide: true}
+#  - {path: "^References/", hide: true}       # other people's work kept for reference
+#  - {path: "^Acme", project: acme-rebrand}

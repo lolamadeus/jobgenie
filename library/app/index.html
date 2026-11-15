@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio Library</title>
+  <link rel="stylesheet" href="/library/app/style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="#all"><span class="mark">PL</span><span id="brand-title">Portfolio library</span></a>
+    <nav class="tabs" id="tabs"></nav>
+    <div class="search"><input id="q" type="search" placeholder="Search everything…  ( / )" autocomplete="off"></div>
+    <button class="btn primary" id="review-btn" title="Rate unrated items one at a time">Review</button>
+    <a class="btn ghost" href="/" title="Back to the Job Search Hub">Hub</a>
+  </header>
+  <div class="body">
+    <aside class="rail" id="rail"></aside>
+    <main class="main" id="main"><div class="loading">Loading the library…</div></main>
+  </div>
+  <div class="player hidden" id="player">
+    <button class="pbtn" id="p-prev" title="Previous">⏮</button>
+    <button class="pbtn big" id="p-play" title="Play / pause (Space)">▶</button>
+    <button class="pbtn" id="p-next" title="Next">⏭</button>
+    <div class="p-info"><div class="p-title" id="p-title"></div><div class="p-sub" id="p-sub"></div>
+      <div class="p-bar" id="p-bar"><i id="p-fill"></i></div></div>
+    <span class="p-time" id="p-time">0:00</span>
+    <div class="p-marks" id="p-marks"></div>
+    <button class="pbtn" id="p-close" title="Close player">✕</button>
+  </div>
+  <div class="overlay hidden" id="overlay"></div>
+  <div class="toast" id="toast"></div>
+  <audio id="audio" preload="none"></audio>
+  <script src="/library/app/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+# One entry per project: a client job, a game, a campaign, a case study, a body of personal work.
+# Claude curates this (see library/README.md), then runs `uv run library/tools/build.py`.
+#
+# tiers: the groups the Projects tab shows, most important first. Rename them to suit your field.
+tiers:
+  - {key: headline, label: Headline work}
+  - {key: notable, label: Notable}
+  - {key: other, label: Other work}
+  - {key: personal, label: Personal projects}
+  - {key: not-credit, label: "Tests, pitches and reference (not credits)"}
+
+projects: []
+#  - slug: acme-rebrand
+#    name: Acme rebrand
+#    client: Acme Ltd
+#    years: "2023"
+#    role: Lead illustrator
+#    tier: headline
+#    confidence: confirmed        # confirmed | likely | guess | unknown
+#    folders: ["Acme 2023"]       # scanned folder names, "ROOT|name" for one root, or "ROOT|*"
+#    evidence: "Folder name and the user's own notes"
+#    question: ""                 # optional: shown in the app's Questions tab for the user to answer
+#    note: ""
