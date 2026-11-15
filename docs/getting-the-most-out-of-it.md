@@ -79,9 +79,10 @@ date. That's how it picks up where you left off without you repeating yourself.
 
 ## When something looks wrong
 
-- **The Hub says "Hub offline"**: the server stopped. Run `uv run hub/server.py` again, or start
-  the `hub` preview in the Claude desktop app.
+- **The Hub says "Hub offline"**: the server stopped (usually because the app or computer
+  restarted). Ask Claude to "open the Hub".
 - **A red banner on the Overview**: a file has a formatting problem. Ask Claude to fix it.
 - **Claude seems to have forgotten something**: ask it to check the files and update "Current
   state" in `CLAUDE.md`. If it was only said in chat and never written down, tell it again.
-- **`uv` not found**: install it (see `README.md`), then restart the terminal or app.
+- **"uv not found" or another missing tool**: ask Claude to install it. If it was only just
+  installed, restarting the Claude app usually fixes "not found".

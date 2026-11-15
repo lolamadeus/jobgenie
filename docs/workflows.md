@@ -1,10 +1,13 @@
 # Workflows
 
 How agents run the routine work. The user starts most of these with a plain request ("find me
-some jobs", "help me apply to this") or a slash command (see `.claude/skills/`).
+some jobs", "help me apply to this"). In the Code tab or Claude Code they can also use the slash
+commands in `.claude/skills/`. In the Chat tab, treat the same words as the same request and
+follow the matching skill file yourself.
 
 ## Starting a session
-1. Read `CLAUDE.md` (it loads automatically in Claude Code).
+1. Read `CLAUDE.md`. Claude Code loads it automatically; anywhere else (such as the desktop app's
+   Chat tab), read it yourself before doing anything in this folder.
 2. **If `knowledge/profile.md` has no `name`, the workspace is new.** Follow
    [onboarding.md](onboarding.md) instead of the rest of this list.
 3. Skim `knowledge/open-questions.md` and the newest file in `log/`.

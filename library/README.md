@@ -28,8 +28,9 @@ Ask Claude: **"set up my portfolio library"** (or run `/library-setup`). Claude 
    project's `question`.
 4. Point you at the app: **http://127.0.0.1:8787/library/** (linked from the Hub's sidebar).
 
-Optional extras: **ffmpeg** gives video previews and audio/video lengths (`winget install ffmpeg`,
-`brew install ffmpeg`, or your Linux package manager). Without it the library still works.
+Optional extra: **ffmpeg** gives video previews and audio/video lengths. If you have video or
+audio and it's missing, Claude offers to install it (see "Setting up the computer" in
+`docs/tooling.md`). Without it the library still works.
 
 ## The app (http://127.0.0.1:8787/library/)
 

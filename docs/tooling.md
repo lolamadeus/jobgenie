@@ -3,20 +3,34 @@
 What's connected, how to use it, and what each job source has turned up. **Agents keep this file
 current:** record what works, what doesn't, and quirks worth remembering, with dates.
 
-Nothing here is required except Claude Code and `uv`. Everything else is optional and gets set up
-during onboarding if the user wants it.
+The user only installs the Claude desktop app (Chat or Code tab) or Claude Code. **Agents install
+everything else**, after a one-line
+explanation and the user's yes, then check it works and record it here with the date.
 
-## Required
-- **Claude Code**: the desktop app's Code tab, the CLI (`claude`), or an IDE extension.
-- **uv** (runs the Hub and tools with the right Python packages, no manual installs):
-  Windows `winget install astral-sh.uv`, macOS `brew install uv`, or see
-  https://docs.astral.sh/uv/getting-started/installation/.
+## Setting up the computer
+| Tool | Needed for | Check | Windows | macOS | Linux |
+|---|---|---|---|---|---|
+| **uv** (required) | The Hub and every tool script; brings its own Python | `uv --version` | `winget install --id astral-sh.uv -e` | `brew install uv`, or `curl -LsSf https://astral.sh/uv/install.sh \| sh` without Homebrew | `curl -LsSf https://astral.sh/uv/install.sh \| sh` |
+| git (optional) | Cloning and pulling updates | `git --version` | `winget install --id Git.Git -e` | `xcode-select --install` | the package manager, e.g. `sudo apt install git` |
+| ffmpeg (optional) | Library video previews and audio/video lengths | `ffmpeg -version` | `winget install --id Gyan.FFmpeg -e` | `brew install ffmpeg` | e.g. `sudo apt install ffmpeg` |
+| pandoc (optional) | Exporting CVs to DOCX/PDF when no Word or LibreOffice | `pandoc --version` | `winget install --id JohnMacFarlane.Pandoc -e` | `brew install pandoc` | e.g. `sudo apt install pandoc` |
+
+- **After installing, a newly installed command may not be found until the shell restarts.** On
+  Windows, winget puts tools on the user PATH; call them by full path for the rest of the session
+  (e.g. `%LOCALAPPDATA%\Microsoft\WinGet\Links\uv.exe`), or ask the user to restart the Claude app.
+- If `winget` or `brew` is missing, use the uv standalone installer (Windows PowerShell:
+  `powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"`).
+- Only install optional tools when a task needs them, and say so first.
+- Anything that needs an admin prompt or a password is the user's to approve: tell them exactly
+  what will pop up.
+
+_Installed (onboarding records versions and dates here):_
 
 ## Connected tools
 _Onboarding fills in which of these the user has, and the date checked._
 
 ### Email (Gmail connector, claude.ai)
-- Turn on in claude.ai → Settings → Connectors, then it's available in Claude Code sessions.
+- Turn on in claude.ai → Settings → Connectors, then it's available in Claude sessions.
 - Search, read and draft. **Sending needs explicit approval of the exact message every time.**
 - Useful for: finding past application emails, recruiter threads, interview invites, and drafting
   follow-ups for the user to send.
@@ -24,7 +38,7 @@ _Onboarding fills in which of these the user has, and the date checked._
 ### LinkedIn MCP (optional, third-party)
 - An open-source server that drives a real browser signed in to the user's LinkedIn account
   (`stickerdaniel/linkedin-mcp-server`). To enable it, copy `.mcp.json.example` to `.mcp.json`,
-  restart Claude Code, and sign in once with `uvx mcp-server-linkedin@<version> --login`.
+  restart Claude, and sign in once with `uvx mcp-server-linkedin@<version> --login`.
 - **Pin a version** rather than `@latest`, and upgrade only when the user asks. Third-party code
   runs with access to the account.
 - **LinkedIn bans automated accounts.** Keep usage light: a handful of searches per session, no

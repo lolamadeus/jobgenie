@@ -1,6 +1,8 @@
 # JobGenie
 
-A job-search workspace you run by talking to [Claude Code](https://claude.com/claude-code).
+A job-search workspace you run by talking to Claude in the
+[Claude desktop app](https://claude.ai/download) (Chat or Code tab) or
+[Claude Code](https://claude.com/claude-code).
 
 You chat about yourself, your goals and the roles you see. Claude interviews you, researches
 roles and companies, keeps records, tailors CVs and drafts messages for your approval, and
@@ -30,40 +32,50 @@ teaching, games, film or anything else. It suits employment, freelance, or both 
 
 ## Quick start
 
-1. **Install the prerequisites**
-   - [Claude Code](https://claude.com/claude-code): the Claude desktop app (Code tab), the CLI, or an
-     IDE extension.
-   - [uv](https://docs.astral.sh/uv/getting-started/installation/), which runs the Hub with the
-     right Python packages:
-     - Windows: `winget install astral-sh.uv`
-     - macOS: `brew install uv`
-     - Linux: `curl -LsSf https://astral.sh/uv/install.sh | sh`
-   - Optional: [ffmpeg](https://ffmpeg.org/) for video previews in the portfolio library.
+The only thing you need is the **[Claude desktop app](https://claude.ai/download)**. Use it in
+the Chat tab or the Code tab, whichever you like. Claude Code in a terminal or an IDE works too.
+Claude sets up everything else.
 
-2. **Get your own copy**
-   ```bash
-   git clone https://github.com/lolamadeus/jobgenie.git
-   cd jobgenie
-   ```
-   Or download the ZIP and unzip it anywhere.
+1. **Get a copy.** Either:
+   - ask Claude:
+     > clone https://github.com/lolamadeus/jobgenie into my Documents folder and open it
 
-3. **Open the folder in Claude Code** and say:
-   > let's get started
+   - or [download the ZIP](https://github.com/lolamadeus/jobgenie/archive/refs/heads/main.zip),
+     unzip it anywhere, and point Claude at that folder.
 
-   (or type `/onboard`). Claude explains what's going to happen, opens the Hub, and interviews
+2. **Say:**
+   > let's get started with JobGenie
+
+   Claude reads the instructions in the folder, checks your computer for the small tools JobGenie
+   needs, and installs anything missing (asking you first). Then it opens the Hub and interviews
    you a few questions at a time. If you have an old CV or a LinkedIn export, drop it in `inbox/`
-   first to save typing.
+   to save typing. If Claude ever seems not to know about JobGenie, say "read CLAUDE.md first".
 
-4. **Keep the Hub open** at http://127.0.0.1:8787. In the Claude desktop app it opens in the
-   browser pane; otherwise run:
-   ```bash
-   uv run hub/server.py
-   ```
+3. **Keep the Hub open.** It's a local page at http://127.0.0.1:8787 that updates as Claude works.
+   If you close it, or restart your computer, ask Claude to "open the Hub".
 
-That's it. From then on, just talk to Claude. [docs/getting-the-most-out-of-it.md](docs/getting-the-most-out-of-it.md)
-has example requests and tips.
+That's it. From then on, just talk to Claude.
+[docs/getting-the-most-out-of-it.md](docs/getting-the-most-out-of-it.md) has example requests
+and tips.
+
+<details>
+<summary>What Claude installs, if you'd rather do it yourself</summary>
+
+- [uv](https://docs.astral.sh/uv/getting-started/installation/), which runs the Hub and its
+  Python packages (it brings its own Python):
+  - Windows: `winget install astral-sh.uv`
+  - macOS: `brew install uv` (or `curl -LsSf https://astral.sh/uv/install.sh | sh`)
+  - Linux: `curl -LsSf https://astral.sh/uv/install.sh | sh`
+- git, only if you clone rather than download the ZIP.
+- [ffmpeg](https://ffmpeg.org/), only if you use the portfolio library and want video previews.
+
+Then start the Hub with `uv run hub/server.py`.
+</details>
 
 ## Everyday commands
+
+Just ask in plain words. Where slash commands are available (the Code tab, Claude Code), these
+shortcuts do the same:
 
 | Command | What it does |
 |---|---|
@@ -74,8 +86,8 @@ has example requests and tips.
 | `/lead-sweep` | Finds freelance clients (if you have a freelance track) |
 | `/library-setup` | Sets up the portfolio library for your work files |
 
-You don't need the commands. Plain requests work too: "here's a job ad", "prep me for my interview
-on Thursday", "draft a follow-up to the recruiter", "I'm now open to contract roles".
+Other things to say: "here's a job ad", "prep me for my interview on Thursday", "draft a
+follow-up to the recruiter", "I'm now open to contract roles".
 
 ## Privacy: read this before you push anything
 
@@ -124,17 +136,16 @@ role". Claude edits the schemas, the Hub and the docs to match.
 
 ## Updating
 
-If you cloned with git, you can pull improvements later:
-```bash
-git pull
-```
-Your own files (knowledge, pipeline, documents) aren't touched by updates unless an update
-changes a template you've already filled in. Then git asks you to merge, and Claude can help.
+Ask Claude to "update JobGenie". If you cloned with git, it pulls the latest version. If you
+downloaded the ZIP, it can set up git for you first. Your own files (knowledge, pipeline,
+documents) aren't touched by updates, unless an update changes a template you've already filled
+in. Then Claude merges the two for you.
 
 ## FAQ
 
-**Do I need to be technical?** No. You need to install two things and open a folder in Claude
-Code. After that it's conversation.
+**Do I need to be technical?** No. You install the Claude desktop app and tell Claude where the
+folder is. Claude installs anything else it needs (with your OK), and after that it's
+conversation.
 
 **Does it apply for jobs automatically?** No, on purpose. Claude researches, tailors and drafts;
 you decide and you send. Mass-applying with generic AI-written CVs tends to backfire.
@@ -143,5 +154,5 @@ you decide and you send. Mass-applying with generic AI-written CVs tends to back
 without the Hub. The Hub just makes it easy to see.
 
 **Can I use another AI tool?** The files are plain Markdown and the instructions live in
-`CLAUDE.md` and `docs/`, so any coding agent that reads project instructions can work with it.
-It's built and tested with Claude Code.
+`CLAUDE.md` and `docs/`, so any AI agent that can read and write files on your computer can work
+with it. It's built for Claude.

@@ -17,9 +17,16 @@ the user and is shaped to their search, not a form filled in.
 ## 0. Set the scene (first message)
 - Say what's about to happen in two or three sentences: you'll ask about them a few questions at
   a time, everything gets saved to files in this folder, and the Hub shows it as it fills up.
-- **Open the Hub for them.** In the Claude desktop app, start the `hub` preview (`.claude/launch.json`);
-  otherwise tell them to run `uv run hub/server.py` and open http://127.0.0.1:8787. If `uv` is
-  missing, give the install command for their OS from `docs/tooling.md`.
+- **Set up the computer yourself. The user shouldn't have to install anything.** Check for `uv`
+  (`uv --version`). If it's missing, say in one line what it is (a small tool that runs the Hub,
+  with its own Python) and install it once they say yes, using the command for their OS in
+  `docs/tooling.md` ("Setting up the computer"). Then confirm it works. If the install needs
+  something only the user can do (an admin prompt, a password), tell them exactly what to click.
+  Don't install optional tools (ffmpeg, pandoc) now; offer them when a task needs them.
+- **Open the Hub for them.** If you have a preview or browser-pane tool (e.g. the desktop app's
+  Code tab), start the `hub` entry in `.claude/launch.json` so it appears beside the chat.
+  Otherwise start `uv run hub/server.py` in the background, so it keeps running after your reply,
+  and open http://127.0.0.1:8787 in their browser or give them the link.
 - Mention the shortcut: an old CV, LinkedIn export or portfolio link saves a lot of typing. They
   can drop files into `inbox/` at any point.
 

@@ -177,8 +177,8 @@ const VIEWS = {
         <h2>Welcome. This workspace is empty, and that's expected.</h2>
         <p>Everything here is filled in by Claude as you talk to it. To start:</p>
         <ol>
-          <li>Open this folder in Claude Code (the desktop app's Code tab, or <code>claude</code> in a terminal).</li>
-          <li>Type <code>/onboard</code>, or just say <em>"let's get started"</em>. Claude interviews you a few questions at a time and fills in your profile, goals and work history.</li>
+          <li>In the Claude desktop app (Chat or Code tab) or Claude Code, point Claude at this folder.</li>
+          <li>Say <em>"let's get started with JobGenie"</em>. Claude interviews you a few questions at a time and fills in your profile, goals and work history.</li>
           <li>Drop an old CV, LinkedIn export or job ad into <code>inbox/</code> to save typing. Claude reads it and asks about anything unclear.</li>
           <li>Keep this page open. It updates by itself whenever Claude writes a file.</li>
         </ol>

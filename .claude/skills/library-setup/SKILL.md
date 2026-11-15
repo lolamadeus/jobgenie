@@ -11,7 +11,8 @@ Follow [library/README.md](../../../library/README.md).
    which kinds of file matter, and what they'll use the work for (these become `uses`, e.g.
    portfolio, cv, reel). Ask about noise to filter (short clips, small images, reference folders
    of other people's work).
-2. Write `library/config.yaml` and set `enabled: true`.
+2. Write `library/config.yaml` and set `enabled: true`. If they have video or audio and `ffmpeg`
+   isn't installed, offer to install it (see "Setting up the computer" in `docs/tooling.md`).
 3. Run `uv run library/tools/scan.py`, then `thumbs.py`, then `build.py`. Large drives can take a
    while: run long scans in the background and tell the user.
 4. Group folders into projects in `library/projects.yaml` (rename the tiers to suit the field).
